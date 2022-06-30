@@ -25,7 +25,7 @@
                   <h3>{{ post.title }}</h3>
                   <p>{{ formatPostContent(post.content) }}</p>
                   <p>
-                    <router-link class="btn btn-primary" :to="{name: 'post', params: {slug: post.slug}}">Read More</router-link>
+                    <router-link class="btn btn-primary" :to="{ name: 'post', params: { slug: post.slug }}">Read More</router-link>
                   </p>
                 </div>
                 <div class="card-footer">
