@@ -1,7 +1,20 @@
 <template>
-<div>
-    <h1>Posts</h1>
-        <div class="container-fluid px-3">
+  <div class="page">
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <div class="d-flex text-end">
+              <div class="title text-white">
+                <h1 class="display-4 fw-bold">BoolPress Blog</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid px-3 mt-4">
       <div class="row">
         <div class="col-10">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
@@ -10,7 +23,10 @@
                 <img :src="'storage/' + post.cover_image" :alt="post.title" />
                 <div class="card-body">
                   <h3>{{ post.title }}</h3>
-                  <p>{{ post.content }}</p>
+                  <p>{{ formatPostContent(post.content) }}</p>
+                  <p>
+                    <router-link class="btn btn-primary" :to="{name: 'post', params: {slug: post.slug}}">Read More</router-link>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <div class="row">
@@ -95,12 +111,11 @@
         </li>
       </ul>
     </nav>
-</div>
-    
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   name: "Posts",
@@ -152,11 +167,16 @@ export default {
         });
     },
     formatTags(index, tag, tags) {
-      console.log(tags.length, index);
+      //console.log(tags.length, index);
       if (index == tags.length - 1) {
         return tag.name + ".";
       } else {
         return tag.name + ",";
+      }
+    },
+    formatPostContent(content) {
+      if (content && content.length > 200) {
+        return content.slice(0, 200) + "...";
       }
     },
   },
@@ -172,15 +192,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-h1 {
-  color: red;
-}
 .categories,
-.tags{
+.tags {
   padding: 1rem;
   margin-top: 1rem;
   background-color: rgba(211, 211, 211, 0.621);
   border-radius: 0.5rem;
+}
+
+.jumbotron {
+  background-image: url("https://t4.ftcdn.net/jpg/02/08/93/47/360_F_208934723_tv3JlZKwlOhF1QiQdBruyaetwLRxTQCD.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 0;
+  min-height: 400px;
+  h1 {
+    text-align: end;
+  }
 }
 </style>

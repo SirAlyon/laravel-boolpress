@@ -14,4 +14,10 @@ class PostController extends Controller
 
         return $posts;
     }
+
+    public function show($slug)
+    {
+        $post = Post::with(['tags', 'category'])->where('slug', $slug)->first();
+        return $post;
+    }
 }

@@ -5273,8 +5273,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Post'
+  name: "Post",
+  mounted: function mounted() {
+    console.log(this.$route.params.slug);
+    this.getPost(this.$route.params.slug);
+  },
+  data: function data() {
+    return {
+      post: ''
+    };
+  },
+  methods: {
+    getPost: function getPost(slug) {
+      var _this = this;
+
+      axios.get("/api/post/" + slug).then(function (response) {
+        console.log(response);
+        _this.post = response.data.data;
+      })["catch"](function (e) {
+        console.error(e);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -5290,6 +5315,21 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5439,12 +5479,16 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     formatTags: function formatTags(index, tag, tags) {
-      console.log(tags.length, index);
-
+      //console.log(tags.length, index);
       if (index == tags.length - 1) {
         return tag.name + ".";
       } else {
         return tag.name + ",";
+      }
+    },
+    formatPostContent: function formatPostContent(content) {
+      if (content && content.length > 200) {
+        return content.slice(0, 200) + "...";
       }
     }
   },
@@ -10573,7 +10617,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h1[data-v-42344b0c] {\n  color: red;\n}\n.categories[data-v-42344b0c],\n.tags[data-v-42344b0c] {\n  padding: 1rem;\n  margin-top: 1rem;\n  background-color: rgba(211, 211, 211, 0.621);\n  border-radius: 0.5rem;\n}", ""]);
+exports.push([module.i, ".categories[data-v-42344b0c],\n.tags[data-v-42344b0c] {\n  padding: 1rem;\n  margin-top: 1rem;\n  background-color: rgba(211, 211, 211, 0.621);\n  border-radius: 0.5rem;\n}\n.jumbotron[data-v-42344b0c] {\n  background-image: url(\"https://t4.ftcdn.net/jpg/02/08/93/47/360_F_208934723_tv3JlZKwlOhF1QiQdBruyaetwLRxTQCD.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  padding: 2rem 0;\n  min-height: 400px;\n}\n.jumbotron h1[data-v-42344b0c] {\n  text-align: end;\n}", ""]);
 
 // exports
 
@@ -42727,7 +42771,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", [
+    _c("div", { staticClass: "title" }, [
+      _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -42751,10 +42799,10 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Posts")]),
+  return _c("div", { staticClass: "page" }, [
+    _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "container-fluid px-3" }, [
+    _c("div", { staticClass: "container-fluid px-3 mt-4" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-10" }, [
           _c(
@@ -42773,7 +42821,26 @@ var render = function () {
                   _c("div", { staticClass: "card-body" }, [
                     _c("h3", [_vm._v(_vm._s(post.title))]),
                     _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(post.content))]),
+                    _c("p", [
+                      _vm._v(_vm._s(_vm.formatPostContent(post.content))),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "btn btn-primary",
+                            attrs: {
+                              to: { name: "post", params: { slug: post.slug } },
+                            },
+                          },
+                          [_vm._v("Read More")]
+                        ),
+                      ],
+                      1
+                    ),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-footer" }, [
@@ -42783,9 +42850,9 @@ var render = function () {
                           ? _c("div", { staticClass: "author" }, [
                               _c("h4", [_vm._v("Autor")]),
                               _vm._v(
-                                "\n                        " +
+                                "\n                      " +
                                   _vm._s(post.user.name) +
-                                  "\n                      "
+                                  "\n                    "
                               ),
                             ])
                           : _vm._e(),
@@ -42796,9 +42863,9 @@ var render = function () {
                       ? _c("span", [
                           _c("strong", [_vm._v("Category:")]),
                           _vm._v(
-                            "\n                    " +
+                            "\n                  " +
                               _vm._s(post.category.name) +
-                              "\n                  "
+                              "\n                "
                           ),
                         ])
                       : _vm._e(),
@@ -42813,7 +42880,7 @@ var render = function () {
                             _vm._l(post.tags, function (tag, index) {
                               return _c("span", { key: index }, [
                                 _vm._v(
-                                  "\n                      " +
+                                  "\n                    " +
                                     _vm._s(
                                       _vm.formatTags(index, tag, post.tags)
                                     )
@@ -42843,9 +42910,9 @@ var render = function () {
                 _vm._l(_vm.categories, function (category) {
                   return _c("li", { key: category.id }, [
                     _vm._v(
-                      "\n                  - " +
+                      "\n                - " +
                         _vm._s(category.name) +
-                        "\n                "
+                        "\n              "
                     ),
                   ])
                 }),
@@ -42955,7 +43022,30 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "jumbotron" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-6" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-6" }, [
+            _c("div", { staticClass: "d-flex text-end" }, [
+              _c("div", { staticClass: "title text-white" }, [
+                _c("h1", { staticClass: "display-4 fw-bold" }, [
+                  _vm._v("BoolPress Blog"),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -58856,8 +58946,11 @@ var routes = [{
   path: '/posts',
   name: 'posts',
   component: _Pages_Posts__WEBPACK_IMPORTED_MODULE_4__["default"]
-} //{ path: '/post/:slug', name: 'post',  component: Post }
-]; // 3. Create the router instance and pass the `routes` option
+}, {
+  path: '/post/:slug',
+  name: 'post',
+  component: _Pages_Post__WEBPACK_IMPORTED_MODULE_5__["default"]
+}]; // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's
 // keep it simple for now.
 
