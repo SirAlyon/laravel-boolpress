@@ -33,8 +33,8 @@
             </div>
           </div>
         </div>
-        <div class="go_to_blog">
-          <router-link :to="{ name: 'posts' }" class="btn btn-primary text-center"
+        <div class="go_to_blog d-flex justify-content-center">
+          <router-link :to="{ name: 'posts' }" class="btn btn-primary mt-4"
             >Go To My Blog!</router-link
           >
         </div>

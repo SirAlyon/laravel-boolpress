@@ -1,18 +1,21 @@
 <template>
   <div class="page">
-    <div class="bg-dark text-white py-2">
+    <div class="bg-secondary text-white py-2">
       <div class="container">
         <div class="jumbotron">
           <div class="d-flex">
             <div class="avatar">
-              <img src="https://picsum.photos/200/300" width="70" alt="" />
+              <img src="https://picsum.photos/200/300" alt="" />
             </div>
-            <h1 class="display-4">About Me</h1>
+            <div class="title">
+              <h1 class="display-4">About Me</h1>
+              <p class="lead">
+                This is a simple hero unit, a simple jumbotron-style component
+                for calling extra attention to featured content or information.
+              </p>
+            </div>
           </div>
-          <p class="lead">
-            This is a simple hero unit, a simple jumbotron-style component for
-            calling extra attention to featured content or information.
-          </p>
+
           <hr class="my-4" />
           <p>
             It uses utility classes for typography and spacing to space content
@@ -26,31 +29,41 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="content py-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-        maxime voluptatibus doloremque ea quibusdam dolores, excepturi quia vero
-        tempore, nesciunt consequuntur amet nisi porro alias. Rem facere
-        suscipit ex? Ratione ducimus amet ad corporis sed facilis beatae error
-        veritatis, accusamus impedit sunt non fuga est in id praesentium ipsum
-        eos quo vitae cumque quaerat! Repellendus aperiam quas perferendis
-        magnam ipsam fuga aut, molestias a deserunt fugiat suscipit animi
-        eveniet voluptate incidunt ullam. Optio, id, magnam ullam minima ad
-        perspiciatis tempora fugiat laboriosam voluptatibus nulla,
-        exercitationem minus sunt nobis incidunt in nesciunt? Exercitationem
-        iusto commodi sint sit dolor. Optio tempora, tempore animi hic
-        reprehenderit illum veritatis, omnis aliquam distinctio accusantium
-        perferendis, autem nam tenetur quis! Quae exercitationem sed, dolore
-        mollitia veritatis omnis aliquam cupiditate, error quis placeat
-        aspernatur dolores officiis neque quasi itaque laboriosam soluta nisi
-        dolorum sapiente blanditiis molestiae. Iusto aut ex ipsam ut est quo
-        necessitatibus recusandae exercitationem atque neque quae consectetur
-        deleniti fuga vero quia amet eos, maiores doloremque dolor consequatur
-        natus dicta alias nostrum earum? Fuga dolorum architecto repellat!
-        Nihil, laudantium ipsam culpa debitis minima laboriosam quasi possimus
-        tenetur tempore ex molestiae magni cupiditate officiis praesentium
-        cumque. Minima commodi, fugiat quasi placeat consequatur facilis magni
-        soluta architecto?
+    <div class="container content">
+      <div class="row">
+        <div class="col-3 my-4">
+          <img class="img-fluid" src="https://picsum.photos/200/300" alt="" />
+        </div>
+        <div class="col-9 px-3 my-4 d-flex align-items-center">
+          <span>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Praesentium officia voluptatum eius quo, quaerat dolor animi cumque
+            aut tenetur iusto in excepturi facere perferendis ipsum quia itaque
+            nulla impedit at. Harum maiores quis id, dignissimos tenetur
+            voluptate ratione praesentium consectetur ea sequi sunt numquam
+            nihil facere aperiam sit mollitia suscipit quaerat porro eligendi
+            expedita possimus excepturi quo at. Corrupti enim, at exercitationem
+            doloremque placeat perspiciatis maiores obcaecati eius. Nulla, quia.
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-9 px-3 my-4 d-flex align-items-center">
+          <span>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Praesentium officia voluptatum eius quo, quaerat dolor animi cumque
+            aut tenetur iusto in excepturi facere perferendis ipsum quia itaque
+            nulla impedit at. Harum maiores quis id, dignissimos tenetur
+            voluptate ratione praesentium consectetur ea sequi sunt numquam
+            nihil facere aperiam sit mollitia suscipit quaerat porro eligendi
+            expedita possimus excepturi quo at. Corrupti enim, at exercitationem
+            doloremque placeat perspiciatis maiores obcaecati eius. Nulla, quia.
+          </span>
+        </div>
+        <div class="col-3 my-4">
+          <img class="img-fluid" src="https://picsum.photos/200/300" alt="" />
+        </div>
+        
       </div>
     </div>
   </div>
@@ -64,8 +77,28 @@ export default {
 
 
 <style scoped lang="scss">
-.avatar img {
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;
+.page {
+  .jumbotron {
+    padding: 1.5rem 0;
+  }
+  .content {
+    img {
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      width: 200px;
+    }
+  
+  }
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  img {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 90px;
+    margin-right: 1.5rem;
+  }
 }
 </style>
