@@ -1,19 +1,6 @@
 <template>
   <div class="page">
-    <div class="bg-light p-5">
-      <div class="container">
-        <h1 class="display-3">BoolPress Blog</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-          aperiam. Saepe quasi deleniti sint magnam incidunt perferendis
-          consequatur, cum eius rem, itaque vitae dignissimos qui quia iure
-          aliquid minima ullam!
-        </p>
-      </div>
-    </div>
-
-    <hr />
-
+    <JumbotronComponent />
     <div class="recent_articles">
       <div class="container">
         <div class="row">
@@ -45,9 +32,12 @@
 
 <script>
 import axios from 'axios'
+import JumbotronComponent from "../components/JumbotronComponent.vue"
+
 
 export default {
   name: "Home",
+  components: {JumbotronComponent},
   data() {
     return {
       posts: "",

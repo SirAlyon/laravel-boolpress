@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,10 @@ use Illuminate\Support\Facades\Auth;
 /* Route::get('/', function () {
     return view('welcome');
 }); */
+Route::get('contact-form', 'MessageController@index')->name('contact.form.index');
+Route::post('contact-form', 'MessageController@store');
+
+
 
 Auth::routes();
 
@@ -27,6 +33,10 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     Route::resource('categories', 'CategoryController');
     Route::resource('tags', 'TagController');
+
+
+    Route::resource('messages', 'MessageController');
+
 
 
 

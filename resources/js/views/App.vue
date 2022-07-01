@@ -44,6 +44,10 @@ export default {
           route_name: "posts",
           route_text: "Posts",
         },
+                {
+          route_name: "contacts",
+          route_text: "Contacts",
+        },
       ],
     };
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="page py-5">
+  <div class="page py-5" v-if="!loading">
     <div class="container">
       <div class="post">
         <h1 class="display-5">{{ post.title }}</h1>
@@ -13,7 +13,7 @@
         <span>{{ post.category.name }}</span>
       </div>
 
-      <div class="tags">
+      <div class="tags" v-if="post.tags">
         <strong>Tags:</strong>
         <span v-for="(tag, index) in post.tags" :key="index">
           <a href="">#{{ formatTags(index, tag, post.tags) }} </a>
@@ -44,8 +44,15 @@ export default {
         .get("/api/posts/" + this.$route.params.slug)
         .then((response) => {
           console.log(response);
-          this.post = response.data;
-          this.loading = false;
+          if (response.data.status_code) {
+            console.log('page not found, 404');
+            this.$router.push({name: 'not-found'});
+            this.loading = false;
+
+          } else {
+            this.post = response.data;
+            this.loading = false;
+          }
         })
         .catch((e) => {
           console.error(e);
