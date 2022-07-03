@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Messages</h1>
     <div class="container">
-        <h1 class="my-3">All Categories</h1>
+        <h1 class="my-3">All Messages</h1>
 
         <div class="row">
             @include('partials.success')

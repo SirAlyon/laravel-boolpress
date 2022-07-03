@@ -37,9 +37,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     Route::resource('messages', 'MessageController');
 
-
-
-
 });
 
 Route::get("{any?}", function(){

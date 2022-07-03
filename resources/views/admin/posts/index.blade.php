@@ -54,12 +54,12 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title text-dark">Delete current</h5>
+                                <h5 class="modal-title text-dark">Delete {{$post->title}}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body text-dark">
                                 <div class="text-danger text-center">IRREVERSIBLE ACTION!</div>
-                                Are you sure you want to delete {{$post->title}}?
+                                <div class="text-center">Are you sure you want to delete "{{$post->title}}"?</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

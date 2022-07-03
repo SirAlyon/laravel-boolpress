@@ -21,7 +21,7 @@
         <div class="form-group my-3">
             <label for="category_id">Category</label>
             <select class="form-select @error('category_id') is-invalid @enderror" aria-label="Default select example" name="category_id" id="category_id">
-                <option selected>Choose Category...</option>
+                <option selected value="">Choose Category...</option>
                 @foreach ($categories as $category)
                 <option value="{{$category->id}}" @if (old('category_id') == $category->id) selected="selected" @endif>{{$category->name}}</option>  
                 @endforeach
@@ -40,7 +40,7 @@
 
         <div class="form-group my-3">
             <label for="content">Content</label>
-            <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" style="height: 100px" value="{{old('content')}}"></textarea>
+            <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" style="height: 100px">{{old('content')}}</textarea>
             {{-- <input type="text" class="form-control " id="content" name="content" aria-describedby="contentHelp" > --}}
             <small id="contentHelp" class="form-text text-muted">Type your post's content</small>
         </div>

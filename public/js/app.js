@@ -60226,10 +60226,8 @@ var routes = [{
   path: '/contacts',
   name: 'contacts',
   component: _Pages_Contacts__WEBPACK_IMPORTED_MODULE_6__["default"]
-}, {
-  path: '/contact-form',
-  name: 'contact-form'
-}, //404 route
+}, //{ path: '/login', name: 'login'},
+//404 route
 {
   path: '/*',
   name: 'not-found',
