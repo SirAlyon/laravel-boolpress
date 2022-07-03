@@ -11,11 +11,11 @@
 <table class="table table-striped  table-responsive table-light border-dark">
     <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">Cover Image</th>
-          <th scope="col">Slug</th>
-          <th scope="col">Actions</th>
+          <th scope="row">ID</th>
+          <th>Title</th>
+          <th>Slug</th>
+          <th>Cover Image</th>
+          <th>Actions</th>
         </tr>
     </thead>
     <tbody>

@@ -32,6 +32,8 @@ const routes = [
   { path: '/posts', name: 'posts',  component: Posts },
   { path: '/posts/:slug', name: 'post',  component: Post },
   { path: '/contacts', name: 'contacts',  component: Contacts },
+  { path: '/contact-form', name: 'contact-form'},
+
 
   //404 route
   { path: '/*', name: 'not-found',  component: NotFound }

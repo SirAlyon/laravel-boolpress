@@ -5292,6 +5292,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Contacts",
@@ -43192,110 +43193,116 @@ var render = function () {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        { staticClass: "content w-50" },
-        [
+      _c("div", { staticClass: "content" }, [
+        _c("div", { staticClass: "row" }, [
           _c(
-            "vue-form",
-            { attrs: { method: "POST", action: "/contact-form" } },
+            "div",
+            { staticClass: "col-6" },
             [
-              _c("div", { staticClass: "input-group mb-3" }, [
-                _c("div", { staticClass: "input-group-prepend" }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "input-group-text h-100",
-                      attrs: { id: "basic-addon1" },
-                    },
-                    [
+              _c(
+                "vue-form",
+                { attrs: { method: "POST", action: "/contact-form" } },
+                [
+                  _c("div", { staticClass: "input-group mb-3" }, [
+                    _c("div", { staticClass: "input-group-prepend" }, [
                       _c(
-                        "svg",
+                        "span",
                         {
-                          staticClass: "bi bi-person-fill ",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            width: "16",
-                            height: "16",
-                            fill: "currentColor",
-                            viewBox: "0 0 16 16",
-                          },
+                          staticClass: "input-group-text h-100",
+                          attrs: { id: "basic-addon1" },
                         },
                         [
-                          _c("path", {
-                            attrs: {
-                              d: "M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "bi bi-person-fill",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                width: "16",
+                                height: "16",
+                                fill: "currentColor",
+                                viewBox: "0 0 16 16",
+                              },
                             },
-                          }),
+                            [
+                              _c("path", {
+                                attrs: {
+                                  d: "M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+                                },
+                              }),
+                            ]
+                          ),
                         ]
                       ),
-                    ]
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    placeholder: "Type your full name",
-                    name: "full_name",
-                    id: "full_name",
-                    "aria-label": "Username",
-                    "aria-describedby": "basic-addon1",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "input-group mb-3" }, [
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "email",
-                    name: "email",
-                    id: "email",
-                    placeholder: "Type here you email",
-                    "aria-label": "Recipient's username",
-                    "aria-describedby": "basic-addon2",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group-append" }, [
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Type your full name",
+                        name: "full_name",
+                        id: "full_name",
+                        "aria-label": "Username",
+                        "aria-describedby": "basic-addon1",
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "input-group mb-3" }, [
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "email",
+                        name: "email",
+                        id: "email",
+                        placeholder: "Type here you email",
+                        "aria-label": "Recipient's username",
+                        "aria-describedby": "basic-addon2",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group-append" }, [
+                      _c(
+                        "span",
+                        {
+                          staticClass: "input-group-text",
+                          attrs: { id: "basic-addon2" },
+                        },
+                        [_vm._v("@example.com")]
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-floating" }, [
+                    _c("textarea", {
+                      staticClass: "form-control",
+                      staticStyle: { height: "100px" },
+                      attrs: { name: "message", id: "floatingTextarea2" },
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "floatingTextarea2" } }, [
+                      _vm._v("Comments"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "span",
+                    "button",
                     {
-                      staticClass: "input-group-text",
-                      attrs: { id: "basic-addon2" },
+                      staticClass: "btn btn-primary my-3",
+                      attrs: { type: "submit" },
                     },
-                    [_vm._v("@example.com")]
+                    [_vm._v("SEND")]
                   ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-floating" }, [
-                _c("textarea", {
-                  staticClass: "form-control",
-                  staticStyle: { height: "100px" },
-                  attrs: { name: "message", id: "floatingTextarea2" },
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "floatingTextarea2" } }, [
-                  _vm._v("Comments"),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary my-3",
-                  attrs: { type: "submit" },
-                },
-                [_vm._v("SEND")]
+                ]
               ),
-            ]
+            ],
+            1
           ),
-        ],
-        1
-      ),
+          _vm._v(" "),
+          _vm._m(1),
+        ]),
+      ]),
     ]),
   ])
 }
@@ -43319,6 +43326,24 @@ var staticRenderFns = [
         ]),
       ]),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-6 d-flex align-items-center justify-content-center" },
+      [
+        _c("img", {
+          attrs: {
+            width: "400",
+            src: "https://img.freepik.com/free-vector/contact-us-concept-illustration_114360-2299.jpg?w=2000",
+            alt: "",
+          },
+        }),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -59923,6 +59948,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 
+ //Vue.component('JumbotronComponent', require('./components/JumbotronComponent.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -59932,6 +59958,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 var app = new Vue({
   el: '#root',
+  components: {
+    'JumbotronComponent': __webpack_require__(/*! ./components/JumbotronComponent.vue */ "./resources/js/components/JumbotronComponent.vue")
+  },
   render: function render(h) {
     return h(_views_App__WEBPACK_IMPORTED_MODULE_1__["default"]);
   },
@@ -60197,6 +60226,9 @@ var routes = [{
   path: '/contacts',
   name: 'contacts',
   component: _Pages_Contacts__WEBPACK_IMPORTED_MODULE_6__["default"]
+}, {
+  path: '/contact-form',
+  name: 'contact-form'
 }, //404 route
 {
   path: '/*',

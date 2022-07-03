@@ -41,7 +41,7 @@ class TagController extends Controller
     {
         //dd($request->all());
         $val_data = $request->validate([
-            'name' => ['required', 'unique:tag']
+            'name' => ['required', 'unique:tags']
         ]);
 
         //dd($val_data);
@@ -89,7 +89,7 @@ class TagController extends Controller
     {
         ($request->all());
         $val_data = $request->validate([
-            'name' => ['required', 'unique:categories']
+            'name' => ['required', 'unique:tags']
         ]);
 
         //dd($val_data);

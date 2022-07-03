@@ -21,6 +21,11 @@ window.Vue = require('vue');
 import router from './router';
 
 import App from './views/App';
+
+//Vue.component('JumbotronComponent', require('./components/JumbotronComponent.vue'));
+
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,6 +34,10 @@ import App from './views/App';
 
 const app = new Vue({
     el: '#root',
+    components: {
+        'JumbotronComponent': require('./components/JumbotronComponent.vue'),
+    },
     render: h => h(App),
         router
+    
 });

@@ -18,29 +18,31 @@
             <small id="cover_imageHelp" class="form-text text-muted">Upload you cover image</small>
         </div>
 
-        <label for="category_id">Category</label>
-        <select class="form-select @error('category_id') is-invalid @enderror" aria-label="Default select example" name="category_id" id="category_id">
-            <option selected>Choose Category...</option>
-            @foreach ($categories as $category)
-              <option value="{{$category->id}}" @if (old('category_id') == $category->id) selected="selected" @endif>{{$category->name}}</option>  
-            @endforeach
-        </select>
-        <small id="categoryHelp" class="form-text text-muted my-3">Select post's category</small>
+        <div class="form-group my-3">
+            <label for="category_id">Category</label>
+            <select class="form-select @error('category_id') is-invalid @enderror" aria-label="Default select example" name="category_id" id="category_id">
+                <option selected>Choose Category...</option>
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}" @if (old('category_id') == $category->id) selected="selected" @endif>{{$category->name}}</option>  
+                @endforeach
+            </select>
+            <small id="categoryHelp" class="form-text text-muted my-3">Select post's category</small>
+        </div>
 
         <label for="tags">Tags</label>
         <select class="form-select @error('tags') is-invalid @enderror" multiple aria-label="tags" name="tags[]" id="tags">
-            <option selected>Choose tags</option>
             @foreach ($tags as $tag)
-            <option value="{{$tag->id}}">{{$tag->name}}</option>
+            <option value="{{$tag->id}}" {{ (collect(old('tags'))->contains($tag->id)) ? 'selected':'' }}>{{$tag->name}}</option>
             @endforeach
-            <small id="tagsHelp" class="form-text text-muted my-3">Select post's tags</small>
-
         </select>
+        <small id="tagsHelp" class="form-text text-muted my-3">Select post's tags</small>
+
 
         <div class="form-group my-3">
             <label for="content">Content</label>
-            <input type="text" class="form-control @error('content') is-invalid @enderror" id="content" name="content" aria-describedby="contentHelp" value="{{old('content')}}">
-            <small id="contentHelp" class="form-text text-muted">Type the cover image link</small>
+            <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" style="height: 100px" value="{{old('content')}}"></textarea>
+            {{-- <input type="text" class="form-control " id="content" name="content" aria-describedby="contentHelp" > --}}
+            <small id="contentHelp" class="form-text text-muted">Type your post's content</small>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
