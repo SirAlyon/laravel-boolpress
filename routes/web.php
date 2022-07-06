@@ -36,6 +36,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
 
     Route::resource('messages', 'MessageController');
+    Route::resource('replies', 'ReplyController');
+
 
 });
 

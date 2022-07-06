@@ -33,16 +33,16 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="">Homepage</a>
+                                <a class="nav-link" href="/">Homepage</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">About</a>
+                                <a class="nav-link" href="/about">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Contacts</a>
+                                <a class="nav-link" href="/contacts">Contacts</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Shop</a>
+                                <a class="nav-link" href="/posts">Blog</a>
                             </li>
                         </ul>
     

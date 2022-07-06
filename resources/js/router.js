@@ -32,7 +32,6 @@ const routes = [
   { path: '/posts', name: 'posts',  component: Posts },
   { path: '/posts/:slug', name: 'post',  component: Post },
   { path: '/contacts', name: 'contacts',  component: Contacts },
-  //{ path: '/login', name: 'login'},
 
 
   //404 route

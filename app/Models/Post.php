@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Models\Category;
 use App\Models\Tag;
+use App\Models\Reply;
+
 
 
 use Illuminate\Database\Eloquent\Model;
@@ -17,6 +19,12 @@ class Post extends Model
         return $this->belongsto(Category::class);
     }
 
+    public function reply()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+     
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
